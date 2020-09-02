@@ -1,0 +1,387 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Varela+Round&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&display=swap";
+
+$total: 200; // total particles
+$orb-size: 300px;
+$particle-size: 8px;
+$time: 14s; 
+$base-hue: 10; // change for diff colors (180 is nice)
+
+:root {
+	--font-color: #FFF;
+	--accent-color: #FF6C01;
+	--mask-color: #0A0A0A;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	color: var(--font-color);
+	&::before {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+		color: var(--font-color);
+	}
+	&::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+		color: var(--font-color);
+	}
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
+}
+
+.mask {
+	position: absolute;
+	font-size: 15em;
+	color: var(--mask-color);
+	transform: rotate(50deg) translate(20%, 30%);
+	z-index: -1;
+}
+
+.banner {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	padding: 100px;
+	background-color: #000;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	transition: 0.5s;
+	z-index: 2;
+}
+.banner.active {
+	transform: translateX(-400px);
+	.line {
+		&:nth-last-of-type(1) {
+			top: 19px;
+			transform: rotate(135deg);
+		}
+		&:nth-last-of-type(2) {
+			opacity: 0;
+			left: -60px;
+		}
+		&:nth-last-of-type(3) {
+			top: 19px;
+			transform: rotate(-135deg);
+		}
+	}
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 100px;
+	z-index: 10000;
+	transition: 0.6s;
+	.logo {
+		position: relative;
+		font-weight: 700;
+		color: var(--font-color);
+		font-size: 2em;
+		transition: 0.6s;
+	}
+}
+.logo {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.icon {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.stripe {
+	width: 10px;
+	height: 42px;
+	background-color: white;
+	&:nth-of-type(1) {
+		background-color: #E92121;
+	}
+	&:nth-of-type(2) {
+		background-color: var(--accent-color);
+	}
+	&:nth-of-type(3) {
+		background-color: #FFB800;
+	}
+	&:nth-of-type(4) {
+		background-color: #C6F11A;
+	}
+}
+#logo_name {
+	display: inline-block;
+	padding-left: 15px;
+	font-size: 30px;
+	font-family: 'Varela Round', sans-serif;
+	color: white;
+	font-weight: bolder;
+}
+
+.hamburger {
+	position: relative;
+	width: 42px;
+	height: 42px;
+	cursor: pointer;
+}
+.line {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	display: block;
+	border-radius: 20px;
+	background-color: white;
+	opacity: 1;
+	transition: .5s ease-in-out;
+	&:nth-of-type(1) {
+		top: 8px;
+	}
+	&:nth-of-type(2) {
+		top: 19px;
+	}
+	&:nth-of-type(3) {
+		top: 30px;
+	}
+}
+
+.content {
+	max-width: 600px;
+	h2 {
+		color: var(--font-color);
+		font-size: 2.5em;
+		span {
+			color: var(--accent-color);
+			font-size: 1.2em;
+		}
+	}
+	p {
+		color: var(--font-color);
+		font-size: 1.2em;
+		font-weight: 300;
+	}
+	a {
+		position: relative;
+		display: inline-block;
+		background: var(--font-color);
+		font-size: 1.2em;
+		font-weight: 500;
+		color: #000;
+		padding: 10px 30px;
+		margin-top: 10px;
+		text-decoration: none;
+	}
+}
+
+.type {
+	position: absolute;
+	border-bottom: 1px solid var(--accent-color);
+}
+.typewriter {
+	overflow: hidden;
+	white-space: nowrap;
+	animation: typing 3.5s steps(40, end);
+}
+.vertical_bar {
+	color: var(--accent-color);
+	animation: blink-caret .75s step-end infinite;
+}
+
+.particles {
+	position: relative;
+	top: 60%;
+	left: 30%;
+	width: 0;
+	height: 0;
+	transform-style: preserve-3d;
+    perspective: 1000px;
+	animation: rotateParticles 14s infinite linear;
+}
+.c {
+	position: absolute;
+	width: $particle-size;
+	height: $particle-size;
+	border-radius: 50%;
+	opacity: 0;
+}
+
+.sci {
+	position: absolute;
+	right: 100px;
+	display: flex;
+	flex-direction: column;
+	li {
+		list-style: none;
+		a {
+			position: relative;
+			width: 50px;
+			height: 50px;
+			margin: 10px 0 0;
+			display: grid;
+			place-items: center;
+			text-decoration: none;
+			border: 1px solid var(--font-color);
+			&:hover {
+				background: var(--font-color);
+			}
+			img {
+				max-width: 24px;
+				filter: invert(1);
+				mix-blend-mode: difference;
+			}
+		}
+	}
+}
+
+#navigation {
+	position: fixed;
+	top: 0;
+	right: -200px;
+	width: 400px;
+	height: 100vh;
+	background: var(--accent-color);
+	z-index: 1;
+	display: grid;
+	place-items: center;
+	transition: 0.5s;
+	ul {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		li {
+			background: var(--accent-color);
+			list-style: none;
+			a {
+				background: var(--accent-color);
+				color: var(--font-color);
+				text-decoration: none;
+				display: inline-block;
+				font-size: 2em;
+				font-weight: 500;
+			}
+		}
+	}
+}
+#navigation.active {
+	right: 0;
+}
+
+@for $i from 1 through $total {
+    $z: (random(1) * 1deg); // random angle to rotateZ
+    $y: (random(360) * 1deg); // random to rotateX
+    $hue: ((40/$total * $i) + $base-hue); // set hue
+    
+    .c:nth-child(#{$i}){ // grab the nth particle
+        animation: orbit#{$i} $time infinite;
+        animation-delay: ($i * .01s); 
+        background-color: hsla($hue, 100%, 50%, 1);
+    }
+  
+    @keyframes orbit#{$i}{ 
+        20% {
+            opacity: 1; // fade in
+        }
+        30% {
+            transform: rotateZ(-$z) rotateY($y) translateX($orb-size) rotateZ($z); // form orb
+        }
+        80% {
+            transform: rotateZ(-$z) rotateY($y) translateX($orb-size) rotateZ($z); // hold orb state 30-80
+            opacity: 1; // hold opacity 20-80
+        }
+        100% {
+            transform: rotateZ(-$z) rotateY($y) translateX( ($orb-size * 3) ) rotateZ($z); // translateX * 3
+        }
+    }
+}
+
+
+/***** KEY FRAMES *****/
+/* The typing effect */
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+	from,to {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+/* Rotate the .particles */
+@keyframes rotateParticles {
+	100% {
+		transform: rotateY(360deg) rotateX(360deg);
+	}
+}
+/**********/
+
+
+@media (max-width: 858px) {
+	.banner {
+		padding: 100px 50px 150px;
+		h2 {
+			font-size: 1.8em;
+		}
+		.content {
+			p {
+				font-size: 1em;
+			}
+			a {
+				font-size: 1em;
+			}
+		}
+	}
+	.banner.active {
+		transform: translateX(-250px);
+	}
+	header {
+		padding: 20px 50px;
+	}
+	.sci {
+		position: absolute;
+		left: 50px;
+		bottom: 50px;
+		right: initial;
+		flex-direction: row;
+		li {
+			margin: initial;
+			margin-right: 10px;
+		}
+	}
+	#navigation {
+		width: 250px;
+		ul {
+			li {
+				a {
+					font-size: 1.5em;
+					margin: 5px 0;
+				}
+			}
+		}
+	}
+}
