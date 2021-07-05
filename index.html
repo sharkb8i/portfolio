@@ -10,9 +10,8 @@
 </head>
 
 <body>
-	<div id="particles-js"></div>
-	
 	<section class="banner" id="banner">
+		<div id="particles-js"></div>
 		<header>
 			<div class="logo">
 				<div class="icon">
@@ -60,6 +59,8 @@
 		</ul> <!-- sci -->
 	</section> <!-- banner -->
 
+	<div class="test"></div>
+
 	<div id="navigation">
 		<ul>
 			<li><a href="#">home</a></li>
@@ -77,13 +78,13 @@
 		
 	<script type="text/javascript">
 		/* TOGGLE MENU FN */
-		const hamburger = document.querySelector(".hamburger");
+		/* const hamburger = document.querySelector(".hamburger"); */
 
 		function toggleMenu() {
-		  var banner = document.getElementById('banner');
-		  var nav = document.getElementById('navigation');
-		  banner.classList.toggle('active');
-		  nav.classList.toggle('active');
+		  	var banner = document.getElementById('banner');
+		  	var nav = document.getElementById('navigation');
+		  	banner.classList.toggle('active');
+		  	nav.classList.toggle('active');
 		}
 
 		// Put the name on the logo
