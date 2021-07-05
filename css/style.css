@@ -138,15 +138,27 @@ header .logo {
 }
 
 .content {
-	max-width: 600px;
+	position: absolute;
+	top: 40%;
+	left: 10%;
+	max-width: 700px;
+	z-index: 4;
 }
 .content h2 {
 	color: var(--font-color);
-	font-size: 2.5em;
 }
-.content h2 span {
+.content h2 .hello {
+	font-size: 2em;
+}
+.content h2 .hello span {
 	color: var(--accent-color);
-	font-size: 1.2em;
+}
+.content h2 .myname {
+	font-weight: 500;
+}
+.content h2 .name {
+	color: var(--accent-color);
+	font-size: 1.8em;
 }
 .content p {
 	color: var(--font-color);
@@ -167,6 +179,7 @@ header .logo {
 
 .type {
   	position: absolute;
+	padding-top: 10px;
 	border-bottom: 1px solid var(--accent-color);
 }
 .typewriter {
