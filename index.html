@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
-	<title>Portfolio II</title>
+	<title>Portfolio</title>
 </head>
 
 <body>
@@ -73,7 +73,22 @@
 	<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
         <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
         <script src="js/particles.js"></script>
-	<script src="js/configs.js"></script>
+	<!-- <script src="js/configs.js"></script> -->
+		
+	<script type="text/javascript">
+		/* TOGGLE MENU FN */
+		const hamburger = document.querySelector(".hamburger");
+
+		function toggleMenu() {
+		  var banner = document.getElementById('banner');
+		  var nav = document.getElementById('navigation');
+		  banner.classList.toggle('active');
+		  nav.classList.toggle('active');
+		}
+
+		// Put the name on the logo
+		document.getElementById("logo_name").innerText = "</bruno>";
+	</script>
 </body>
 
 </html>
