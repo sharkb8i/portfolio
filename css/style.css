@@ -214,7 +214,7 @@ header .logo {
 	width: 400px;
 	height: 100vh;
 	background: var(--accent-color);
-	z-index: 3;
+	z-index: 2;
 	display: grid;
 	place-items: center;
 	transition: 0.5s;
