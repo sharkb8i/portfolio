@@ -32,7 +32,7 @@ body {
   display: flex;
   align-items: center;
   transition: 0.5s;
-	z-index: 2; 
+  z-index: 2; 
 }
 
 .banner.active {
@@ -249,7 +249,7 @@ header .logo {
     /* background-image: linear-gradient(#3a5461, #e3e3e4); */
 	background-image: transparent;
     background-size: cover;
-    z-index: 1000;
+    z-index: 1;
 }
 
 /***** KEY FRAMES *****/
