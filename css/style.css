@@ -32,7 +32,7 @@ body {
 	display: flex;
 	align-items: center;
 	transition: 0.5s;
-	z-index: 2; 
+	z-index: 4; 
 }
 
 .banner.active {
@@ -184,6 +184,7 @@ header .logo {
     right: 100px;
     display: flex;
 	flex-direction: column;
+	z-index: 4;
 }
 .sci li {
 	list-style: none;
@@ -214,7 +215,7 @@ header .logo {
 	width: 400px;
 	height: 100vh;
 	background: var(--accent-color);
-	z-index: 2;
+	z-index: 1;
 	display: grid;
 	place-items: center;
 	transition: 0.5s;
@@ -249,7 +250,7 @@ header .logo {
     /* background-image: linear-gradient(#3a5461, #e3e3e4); */
 	background-image: transparent;
     background-size: cover;
-    z-index: 1;
+    z-index: 3;
 }
 
 /***** KEY FRAMES *****/
